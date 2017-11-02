@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7BFFF6B6-F57A-4744-BD66-256D899601C6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Honeywell.ISP.Services.HardwareConfiguration.Isom</RootNamespace>
+    <AssemblyName>Honeywell.ISP.Services.HardwareConfiguration.Isom</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>Honeywell.ISP.Services.HardwareConfiguration.Isom.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>Honeywell.ISP.Services.HardwareConfiguration.Isom.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Honeywell.ISP.Services.HardwareConfiguration.Isom.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Honeywell.ISP.Services.HardwareConfiguration.Isom.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.Crypto.dll.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Caching.Client, Version=0.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Caching.Client.0.0.8-beta-featurB8R58ce8e\lib\net461\Honeywell.ISP.Framework.Caching.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Common.CacheType, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Common.CacheType.1.0.3\lib\net461\Honeywell.ISP.Framework.Common.CacheType.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Common.Configuration.Interface, Version=0.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Common.Configuration.Interface.0.0.5\lib\net461\Honeywell.ISP.Framework.Common.Configuration.Interface.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Common.Configuration.ISPConfigurationProvider, Version=0.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Common.ConfigurationProvider.0.0.5\lib\net461\Honeywell.ISP.Framework.Common.Configuration.ISPConfigurationProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Common.Constants, Version=0.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Caching.Client.0.0.8-beta-featurB8R58ce8e\lib\net461\Honeywell.ISP.Framework.Common.Constants.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Common.ContainerProvider, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Common.ContainerProvider.0.0.2\lib\net452\Honeywell.ISP.Framework.Common.ContainerProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Common.HttpClientWrapper, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Common.HttpClientWrapper.1.0.3-beta-featurB2Ra7dd81\lib\net461\Honeywell.ISP.Framework.Common.HttpClientWrapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Common.IFaultRetry, Version=0.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Common.IFaultRetry.0.0.5\lib\net461\Honeywell.ISP.Framework.Common.IFaultRetry.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.FeatureToggling.Entities, Version=2.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.FeatureToggling.Entities.2.1.2\lib\net461\Honeywell.ISP.Framework.FeatureToggling.Entities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Messaging.Common, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Messaging.Common.2.1.1\lib\net461\Honeywell.ISP.Framework.Messaging.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Messaging.ConfigSettings, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Messaging.Common.2.1.1\lib\net461\Honeywell.ISP.Framework.Messaging.ConfigSettings.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Messaging.Core, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Messaging.Common.2.1.1\lib\net461\Honeywell.ISP.Framework.Messaging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Messaging.Core.Contracts, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Messaging.Common.2.1.1\lib\net461\Honeywell.ISP.Framework.Messaging.Core.Contracts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Common.Entities, Version=5.3.29.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Common.Entities.5.3.29-beta-featurB61Re92b\lib\net461\Honeywell.ISP.Services.Common.Entities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Common.Utility, Version=5.3.22.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Common.Utility.5.3.22-beta-featurB57R967f\lib\net461\Honeywell.ISP.Services.Common.Utility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.Cache, Version=9.3.39.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.Components.9.3.39-beta-featurB77R4a14\lib\net461\Honeywell.ISP.Services.Core.Cache.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.CommunicationChannel, Version=9.3.39.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.HardwareComponents.9.3.39-beta-featurB77R4a14\lib\net461\Honeywell.ISP.Services.Core.CommunicationChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.Components, Version=9.3.39.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.Components.9.3.39-beta-featurB77R4a14\lib\net461\Honeywell.ISP.Services.Core.Components.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.Contracts, Version=9.3.39.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.DataTypes.9.3.39-beta-featurB4R52589\lib\net461\Honeywell.ISP.Services.Core.Contracts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.DataAccess, Version=9.3.39.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.Components.9.3.39-beta-featurB77R4a14\lib\net461\Honeywell.ISP.Services.Core.DataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.DataTypes, Version=9.3.39.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.DataTypes.9.3.39-beta-featurB4R52589\lib\net461\Honeywell.ISP.Services.Core.DataTypes.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.DBAccess, Version=9.3.39.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.Components.9.3.39-beta-featurB77R4a14\lib\net461\Honeywell.ISP.Services.Core.DBAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.HardwareComponents, Version=9.3.39.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.HardwareComponents.9.3.39-beta-featurB77R4a14\lib\net461\Honeywell.ISP.Services.Core.HardwareComponents.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.Interfaces, Version=9.3.39.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.Components.9.3.39-beta-featurB77R4a14\lib\net461\Honeywell.ISP.Services.Core.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.Primitives, Version=9.3.39.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.DataTypes.9.3.39-beta-featurB4R52589\lib\net461\Honeywell.ISP.Services.Core.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.HardwareConfiguration.Contracts, Version=8.8.13.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.HardwareConfiguration.Contracts.8.8.13-beta-featurB18Raa9d\lib\net461\Honeywell.ISP.Services.HardwareConfiguration.Contracts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.SystemConfiguration.Contracts, Version=5.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.SystemConfiguration.Contracts.5.0.8-beta-featurB12R02002\lib\net461\Honeywell.ISP.Services.SystemConfiguration.Contracts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.Client.Common, Version=1.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomClientx64.1.3.0.170724\lib\Honeywell.Security.Isom.Client.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.Client.Interface, Version=1.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomClientx64.1.3.0.170724\lib\Honeywell.Security.Isom.Client.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.Client.ProxyBase, Version=1.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomClientx64.1.3.0.170724\lib\Honeywell.Security.Isom.Client.ProxyBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.Client.ProxyController, Version=1.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomClientx64.1.3.0.170724\lib\Honeywell.Security.Isom.Client.ProxyController.dll</HintPath>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.Client.Runtime, Version=1.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomClientx64.1.3.0.170724\lib\Honeywell.Security.Isom.Client.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.Client.Transport, Version=1.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomClientx64.1.3.0.170724\lib\Honeywell.Security.Isom.Client.Transport.dll</HintPath>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.Common, Version=1.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomCommonx64.1.3.0.170724\lib\Honeywell.Security.Isom.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.CustomFormatter, Version=1.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomCommonx64.1.3.0.170724\lib\Honeywell.Security.Isom.CustomFormatter.dll</HintPath>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.Log, Version=1.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomCommonx64.1.3.0.170724\lib\Honeywell.Security.Isom.Log.dll</HintPath>
+    </Reference>
+    <Reference Include="IdentityModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdentityModel.1.9.2\lib\net45\IdentityModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.3\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocol.Extensions, Version=1.0.2.33, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocol.Extensions.1.0.2.206221351\lib\net45\Microsoft.IdentityModel.Protocol.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.4.0.1\lib\Net45\Microsoft.Practices.Unity.Interception.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.4.0.1\lib\Net45\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Honeywell.Security.Isom.DataLibrary, Version=1.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.170724\lib\Proxy.Honeywell.Security.Isom.DataLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BizAlarm\AlarmIsom.cs" />
+    <Compile Include="BizAlarm\IAlarmIsom.cs" />
+    <Compile Include="BizController\ControllerIsom.cs" />
+    <Compile Include="BizController\IControllerIsom.cs" />
+    <Compile Include="BizInstrusionState\IIntrusionStateProviderIsom.cs" />
+    <Compile Include="BizInstrusionState\IntrusionStateProviderIsom.cs" />
+    <Compile Include="ModuleOfIsom.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BizSensor\SensorIsom.cs" />
+    <Compile Include="BizSensor\ISensorIsom.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Honeywell.ISP.Services.HardwareConfiguration.Isom.ruleset" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Honeywell.ISP.Services.HardwareConfiguration.Common.csproj">
+      <Project>{65661622-0b59-46e7-ae7e-fe4af82a4ea6}</Project>
+      <Name>Honeywell.ISP.Services.HardwareConfiguration.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\Honeywell.ISP.Services.HardwareConfiguration.DataAccess.csproj">
+      <Project>{889fb2ad-14da-41e4-aadd-d8a3b7e302d8}</Project>
+      <Name>Honeywell.ISP.Services.HardwareConfiguration.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Honeywell.ISP.Services.HardwareConfiguration.Wrappers\Honeywell.ISP.Services.HardwareConfiguration.Wrappers.csproj">
+      <Project>{804280a2-7d14-442b-abc1-9e8b0d71d4d0}</Project>
+      <Name>Honeywell.ISP.Services.HardwareConfiguration.Wrappers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.1.20.1\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.1.20.1\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.1.20.1\analyzers\SonarAnalyzer.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

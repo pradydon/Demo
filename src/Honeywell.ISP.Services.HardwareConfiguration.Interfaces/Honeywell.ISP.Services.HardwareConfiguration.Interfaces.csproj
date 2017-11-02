@@ -1,0 +1,808 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9DECF6A7-D723-4F64-B144-F66CA9EBF93E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Honeywell.ISP.Services.HardwareConfiguration.Interfaces</RootNamespace>
+    <AssemblyName>Honeywell.ISP.Services.HardwareConfiguration.Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.Crypto.dll.1.8.1\lib\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Auth.Client, Version=1.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Auth.Client.1.2.3-beta-featurB43R1a6bf\lib\net461\Honeywell.ISP.Framework.Auth.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Auth.Entities, Version=1.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Auth.Client.1.2.3-beta-featurB43R1a6bf\lib\net461\Honeywell.ISP.Framework.Auth.Entities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Caching.Client, Version=0.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Caching.Client.0.0.3\lib\net461\Honeywell.ISP.Framework.Caching.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Common.Configuration.Interface, Version=0.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Common.Configuration.Interface.0.0.5\lib\net461\Honeywell.ISP.Framework.Common.Configuration.Interface.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Common.Configuration.ISPConfigurationProvider, Version=0.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Common.ConfigurationProvider.0.0.5\lib\net461\Honeywell.ISP.Framework.Common.Configuration.ISPConfigurationProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Common.Constants, Version=0.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Caching.Client.0.0.3\lib\net461\Honeywell.ISP.Framework.Common.Constants.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Common.ContainerProvider, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Common.ContainerProvider.0.0.2\lib\net452\Honeywell.ISP.Framework.Common.ContainerProvider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Common.FaultRetry, Version=1.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Auth.Client.1.2.3-beta-featurB43R1a6bf\lib\net461\Honeywell.ISP.Framework.Common.FaultRetry.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Common.HttpClientWrapper, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Common.HttpClientWrapper.1.0.3\lib\net461\Honeywell.ISP.Framework.Common.HttpClientWrapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Common.IFaultRetry, Version=0.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Common.IFaultRetry.0.0.5\lib\net461\Honeywell.ISP.Framework.Common.IFaultRetry.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Messaging.Common, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Messaging.Common.2.0.1\lib\net461\Honeywell.ISP.Framework.Messaging.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Messaging.ConfigSettings, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Messaging.Common.2.0.1\lib\net461\Honeywell.ISP.Framework.Messaging.ConfigSettings.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Messaging.Core, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Messaging.Common.2.0.1\lib\net461\Honeywell.ISP.Framework.Messaging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Messaging.Core.Contracts, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Messaging.Common.2.0.1\lib\net461\Honeywell.ISP.Framework.Messaging.Core.Contracts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.Messaging.ProviderManager, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Messaging.ProviderManager.2.0.1\lib\net461\Honeywell.ISP.Framework.Messaging.ProviderManager.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Framework.WCFIdentityAuthorization, Version=1.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Framework.Auth.Client.1.2.3-beta-featurB43R1a6bf\lib\net461\Honeywell.ISP.Framework.WCFIdentityAuthorization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Common.Components, Version=5.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Common.Components.5.1.3-beta-featurB8R044376\lib\net461\Honeywell.ISP.Services.Common.Components.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Common.DataAccess, Version=5.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Common.Components.5.1.3-beta-featurB8R044376\lib\net461\Honeywell.ISP.Services.Common.DataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Common.Entities, Version=5.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Common.Components.5.1.3-beta-featurB8R044376\lib\net461\Honeywell.ISP.Services.Common.Entities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Common.Extensions, Version=5.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Common.Components.5.1.3-beta-featurB8R044376\lib\net461\Honeywell.ISP.Services.Common.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Common.Interfaces, Version=5.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Common.Components.5.1.3-beta-featurB8R044376\lib\net461\Honeywell.ISP.Services.Common.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Common.ServiceHelper, Version=5.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Common.Components.5.1.3-beta-featurB8R044376\lib\net461\Honeywell.ISP.Services.Common.ServiceHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Common.Utility, Version=5.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Common.Utility.5.1.4-beta-featurB3Rb26002\lib\net461\Honeywell.ISP.Services.Common.Utility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.Cache, Version=9.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.Components.9.1.3-beta-featurB2R645cf7\lib\net461\Honeywell.ISP.Services.Core.Cache.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.CommunicationChannel, Version=9.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.HardwareComponents.9.1.0-beta-featurB7R2a9d5f\lib\net461\Honeywell.ISP.Services.Core.CommunicationChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.Components, Version=9.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.Components.9.1.3-beta-featurB2R645cf7\lib\net461\Honeywell.ISP.Services.Core.Components.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.Contracts, Version=9.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.DataTypes.9.1.0-beta-featurB7R2a9d5f\lib\net461\Honeywell.ISP.Services.Core.Contracts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.DataAccess, Version=9.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.Components.9.1.3-beta-featurB2R645cf7\lib\net461\Honeywell.ISP.Services.Core.DataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.DataTypes, Version=9.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.DataTypes.9.1.0-beta-featurB7R2a9d5f\lib\net461\Honeywell.ISP.Services.Core.DataTypes.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.DBAccess, Version=9.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.Components.9.1.3-beta-featurB2R645cf7\lib\net461\Honeywell.ISP.Services.Core.DBAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.DependencyResolver, Version=8.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.DependencyResolver.8.0.8-beta-EagleB124Rb4119\lib\net452\Honeywell.ISP.Services.Core.DependencyResolver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.HardwareComponents, Version=9.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.HardwareComponents.9.1.0-beta-featurB7R2a9d5f\lib\net461\Honeywell.ISP.Services.Core.HardwareComponents.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.Interfaces, Version=9.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.Components.9.1.3-beta-featurB2R645cf7\lib\net461\Honeywell.ISP.Services.Core.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.Core.Primitives, Version=9.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.Core.DataTypes.9.1.0-beta-featurB7R2a9d5f\lib\net461\Honeywell.ISP.Services.Core.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.HardwareConfiguration.Contracts, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.HardwareConfiguration.Contracts.8.1.0-beta-featurB6R314f93\lib\net461\Honeywell.ISP.Services.HardwareConfiguration.Contracts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.ISP.Services.SystemConfiguration.Contracts, Version=5.0.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Honeywell.ISP.Services.SystemConfiguration.Contracts.5.0.8-beta-featurB12R02002\lib\net461\Honeywell.ISP.Services.SystemConfiguration.Contracts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.Client.Common, Version=1.0.2.931, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomClientx64.1.0.0.160928\lib\Honeywell.Security.Isom.Client.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.Client.Interface, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomClientx64.1.0.0.160928\lib\Honeywell.Security.Isom.Client.Interface.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.Client.ProxyBase, Version=1.0.2.931, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomClientx64.1.0.0.160928\lib\Honeywell.Security.Isom.Client.ProxyBase.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.Client.ProxyController, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomClientx64.1.0.0.160928\lib\Honeywell.Security.Isom.Client.ProxyController.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.Client.Runtime, Version=1.0.2.931, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomClientx64.1.0.0.160928\lib\Honeywell.Security.Isom.Client.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.Client.Transport, Version=1.0.2.931, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomClientx64.1.0.0.160928\lib\Honeywell.Security.Isom.Client.Transport.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.Common, Version=1.0.0.3610, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomCommonx64.1.0.0.160928\lib\Honeywell.Security.Isom.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.CustomFormatter, Version=1.0.0.3610, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomCommonx64.1.0.0.160928\lib\Honeywell.Security.Isom.CustomFormatter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Honeywell.Security.Isom.Log, Version=1.0.0.3610, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomCommonx64.1.0.0.160928\lib\Honeywell.Security.Isom.Log.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IdentityModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdentityModel.1.9.2\lib\net45\IdentityModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.3\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocol.Extensions, Version=1.0.2.33, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocol.Extensions.1.0.2.206221351\lib\net45\Microsoft.IdentityModel.Protocol.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.Logging.6.0.1304.0\lib\NET45\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8\Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.4.0.1\lib\Net45\Microsoft.Practices.Unity.Interception.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Interception.4.0.1\lib\Net45\Microsoft.Practices.Unity.Interception.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="protobuf-net, Version=2.0.0.668, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.2.0.0.668\lib\net40\protobuf-net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.AC.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.AC.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Analytics.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Analytics.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.AudioSources.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.AudioSources.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Cameras.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Cameras.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Cameras_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Cameras_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.CellularInterfaces.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.CellularInterfaces.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.CellularInterfaces_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.CellularInterfaces_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Channels.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Channels.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Clips.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Clips.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Clips_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Clips_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.CodecDetails.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.CodecDetails.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.COSensor.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.COSensor.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Data, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.DetectorGroups.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.DetectorGroups.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.DetectorGroups_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.DetectorGroups_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.DetectorGroupTypes.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.DetectorGroupTypes.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.EagleConnectionDetail.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.EagleConnectionDetail.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.EagleInputs.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.EagleInputs.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.EaglePartitions.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.EaglePartitions.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.EaglePeripheral.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.EaglePeripheral.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.EagleSystem.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.EagleSystem.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Expand, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Expand.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Extension, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Extension.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Files.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Files.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Files_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Files_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Flashers.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Flashers.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.GBSensors.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.GBSensors.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Isom.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Isom.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomAccessPoints.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomAccessPoints.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomAccounts.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomAccounts.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomAccounts_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomAccounts_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomBinaryHeader.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomBinaryHeader.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomCommonHeaders.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomCommonHeaders.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomCredentialHolders.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomCredentialHolders.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomCredentialHolders_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomCredentialHolders_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomCredentials.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomCredentials.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomCredentials_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomCredentials_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomDeviceCollections.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomDeviceCollections.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomDeviceCollections_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomDeviceCollections_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomDeviceMgmt.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomDeviceMgmt.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomDevices.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomDevices.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomDevices_a.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomDevices_a.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomDevices_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomDevices_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomDoors.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomDoors.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomDoors_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomDoors_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomEvents.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomEvents.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomHolidays.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomHolidays.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomInputs.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomInputs.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomInputs_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomInputs_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomInterfaces.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomInterfaces.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomInterfaces_a.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomInterfaces_a.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomInterfaces_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomInterfaces_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomIpInterfaces.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomIpInterfaces.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomObject.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomObject.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomOutputs.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomOutputs.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomOutputs_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomOutputs_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomPartitions.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomPartitions.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomPartitions_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomPartitions_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomPeripheral.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomPeripheral.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomPeripheral_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomPeripheral_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomPermissions.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomPermissions.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomResponseStatus.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomResponseStatus.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomSchedules.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomSchedules.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomSecurity.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomSecurity.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomStdDef.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomStdDef.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomSystem.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomSystem.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomSystem_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomSystem_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomTimeMgmt.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomTimeMgmt.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomUserMgmt.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomUserMgmt.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.IsomWiFiInterfaces.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.IsomWiFiInterfaces.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.ISPEventStreams.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.ISPEventStreams.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.KeyFobs.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.KeyFobs.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.KeyFobs_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.KeyFobs_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.KeyPads.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.KeyPads.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.KeyPads_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.KeyPads_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.KeySwitches.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.KeySwitches.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.KeySwitches_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.KeySwitches_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.LEDs.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.LEDs.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.LogicalGroups.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.LogicalGroups.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.LogicalGroup_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.LogicalGroup_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Macros.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Macros.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Macros_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Macros_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.MPCAccount.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.MPCAccount.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.MPCCamera.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.MPCCamera.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.MPCDashboard.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.MPCDashboard.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.MPCEula.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.MPCEula.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.MPCEvents.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.MPCEvents.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.MPCFiles.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.MPCFiles.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.MPCSchedules.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.MPCSchedules.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.MPCStreamProfile.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.MPCStreamProfile.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.MPCUserProfile.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.MPCUserProfile.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.NetaxsEvents.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.NetaxsEvents.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.NetaxsInputs.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.NetaxsInputs.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.NetaxsOutputGroups.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.NetaxsOutputGroups.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.NetaxsOutputs.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.NetaxsOutputs.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.NetaxsSystemGeneral.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.NetaxsSystemGeneral.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.PIRs.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.PIRs.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.PMCollections.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.PMCollections.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.PMs.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.PMs.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Programs.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Programs.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Recorders.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Recorders.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Recorders_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Recorders_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.RecordProfile.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.RecordProfile.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.RecordProfile_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.RecordProfile_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Sites.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Sites.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Sites_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Sites_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.SmokeDetectors.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.SmokeDetectors.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Sounders.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Sounders.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.StreamProfile.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.StreamProfile.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.StreamProfile_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.StreamProfile_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Streams.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Streams.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Streams_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Streams_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Thermostat.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Thermostat.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Thermostat_e.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Thermostat_e.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Proxy.Volumes.proto, Version=1.0.2.1022, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\IsomDatalibx64.1.3.0.1144\lib\Proxy.Volumes.proto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Honeywell.ISP.Services.HardwareConfiguration.Common.csproj">
+      <Project>{65661622-0B59-46E7-AE7E-FE4AF82A4EA6}</Project>
+      <Name>Honeywell.ISP.Services.HardwareConfiguration.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\" />
+    <Folder Include="DataAccess\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

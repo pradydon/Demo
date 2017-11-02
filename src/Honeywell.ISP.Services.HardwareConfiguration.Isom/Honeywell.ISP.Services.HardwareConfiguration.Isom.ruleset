@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="SonarQube - Honeywell.ISP.Services.HardwareConfiguration.sln feature-ISP-14419-SH-PI8.1-Code-CleanUp ISP way" ToolsVersion="14.0">
+  <Include Path="..\sonarqube\services.hardwareconfiguration_feature-isp-14419-sh-pi8.1-code-cleanupcsharp.ruleset" Action="Default" />
+</RuleSet>
